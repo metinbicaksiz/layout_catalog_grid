@@ -19,6 +19,6 @@
   }
 
   &__card:not(:nth-child(4n)) {
-    margin-right: $gap;
+    gap: $gap;
   }
 }

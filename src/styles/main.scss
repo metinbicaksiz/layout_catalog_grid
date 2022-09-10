@@ -14,26 +14,10 @@ body {
 @import "_catalog.scss";
 @import "./utils/variables";
 
-@media (max-width: 487px) {
-  .catalog {
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
-  }
-}
-
-@media (min-width: 488px) AND (max-width: 767px) {
-  .catalog {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-  }
-}
-
-@media (min-width: 768px) AND (max-width: 1023px) {
-  .catalog {
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .catalog {
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+@each $key, $val in $breakpoints {
+  @media (#{$val}) {
+    .catalog {
+      grid-template-columns: repeat($key, minmax(200px, 1fr));
+    }
   }
 }
