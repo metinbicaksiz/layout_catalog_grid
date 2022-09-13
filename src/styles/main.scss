@@ -13,11 +13,3 @@ body {
 @import "_header.scss";
 @import "_catalog.scss";
 @import "./utils/variables";
-
-@each $key, $val in $breakpoints {
-  @media (#{$val}) {
-    .catalog {
-      grid-template-columns: repeat($key, minmax(200px, 1fr));
-    }
-  }
-}
